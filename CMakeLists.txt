@@ -10,9 +10,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/src/obj")
 
 include(FetchContent)
 
-file(GLOB SOURCES CONFIGURE_DEPENDS
-    "${CMAKE_SOURCE_DIR}/src/*.c"
-)
+set(SOURCES "${CMAKE_SOURCE_DIR}/src/main.c")
 
 FetchContent_Declare(
     minhook
@@ -23,5 +21,4 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(minhook)
 
 add_executable(app ${SOURCES})
-
 target_link_libraries(app PRIVATE minhook)

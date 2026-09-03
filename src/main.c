@@ -1,8 +1,8 @@
 #include <windows.h>
-#include <stdio.h>
 #include <MinHook.h>
+#include "file.c"
 
 int main() {
-    printf("Hello World!");
+    print();
     return 0;
 }
